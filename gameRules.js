@@ -10,17 +10,18 @@ function computerPlay(){
 }
 
 function player(){
-    let play = window.prompt("Rock, paper, or scissors?")
+    let play = window.prompt("Rock, paper, or scissors?");
+    return play;
 }
 
 function winner(cPlay, pPlay){
     let winner = "";
-    if(cPlay === "rock" && pPLay === "scissors") winner = "computer";
-    if(cPlay === "scissors" && pPLay === "paper") winner = "computer";
-    if(cPlay === "paper" && pPLay === "rock") winner = "computer";
-    if(cPlay === "rock" && pPLay === "paper") winner = "player";
-    if(cPlay === "paper" && pPLay === "scissors") winner = "player";
-    if(cPlay === "scissors" && pPLay === "rock") winner = "player";
+    if(cPlay === "rock" && pPlay === "scissors") winner = "computer";
+    if(cPlay === "scissors" && pPlay === "paper") winner = "computer";
+    if(cPlay === "paper" && pPlay === "rock") winner = "computer";
+    if(cPlay === "rock" && pPlay === "paper") winner = "player";
+    if(cPlay === "paper" && pPlay === "scissors") winner = "player";
+    if(cPlay === "scissors" && pPlay === "rock") winner = "player";
     
     return winner;
 }
@@ -35,8 +36,15 @@ while((playerScore!=3)||(computerScore!=3)){
     compPlay = computerPlay();
     playerPlay = player();
     
-    if(winner(compPlay, playerPlay)==="computer")computerScore++;
-    if(winner(compPlay, playerPlay)==="player")playerScore++;
+    if(winner(compPlay, playerPlay)==="computer"){
+        computerScore++;
+        console.log("Computer wins this round :(");
+    }
+
+    if(winner(compPlay, playerPlay)==="player"){
+        playerScore++;
+        console.log("Player wins this round!");
+    }
     if(computerScore==3)console.log("The computer wins :(");
     if(playerScore==3)console.log("You win!");
 }
