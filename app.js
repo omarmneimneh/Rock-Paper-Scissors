@@ -59,11 +59,11 @@ function game(userChoice){
     }
 
     if(userScore==5){
-        message_h2.innerHTML="You win the game!"
+        alert("You win!");
     }
 
     if(compScore==5){
-        message_h2.innerHTML="You lost the game :("
+        alert("You lost :(");
     }
 }
 
